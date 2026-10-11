@@ -26,6 +26,7 @@ variable "snowflake_private_key" {
   description = "PEM private key for the TERRAFORM_SVC Snowflake user"
   type        = string
   sensitive   = true
+  default     = ""
 
   validation {
     condition     = length(trimspace(var.snowflake_private_key)) > 0
