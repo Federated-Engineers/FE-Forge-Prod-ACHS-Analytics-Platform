@@ -19,7 +19,7 @@ provider "snowflake" {
   account_name      = local.snowflake_tags.account
   user              = "TERRAFORM_SVC"
   role              = "SYSADMIN"
-  password = "AuthorisedIaC@2026"
+  password          = "AuthorisedIaC@2026"
   # authenticator     = "SNOWFLAKE_JWT"
   # private_key       = var.snowflake_private_key
 }
@@ -31,7 +31,7 @@ provider "snowflake" {
   user              = "TERRAFORM_SVC"
   role              = "USERADMIN"
   alias             = "useradmin"
-  password = "AuthorisedIaC@2026"
+  password          = "AuthorisedIaC@2026"
   # authenticator     = "SNOWFLAKE_JWT"
   # private_key       = var.snowflake_private_key
 }
