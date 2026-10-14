@@ -5,7 +5,7 @@ resource "snowflake_storage_integration_aws" "achs_s3_integration" {
   storage_provider = "S3"
   # Constructed manually (not a resource reference) to avoid a dependency cycle with aws_iam_role.snowflake_role
   storage_aws_role_arn      = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:role/snowflake-role"
-  storage_allowed_locations = ["s3://ach-data-project/"]
+  storage_allowed_locations = ["s3://angel-city-health-data/"]
 }
 
 resource "snowflake_file_format_json" "json_format" {
@@ -20,6 +20,6 @@ resource "snowflake_stage_external_s3" "achs_s3_stage" {
   database            = snowflake_database.achs_analytics.name
   schema              = snowflake_schema.staging.name
   storage_integration = snowflake_storage_integration_aws.achs_s3_integration.name
-  url                 = "s3://ach-data-project/"
+  url                 = "s3://angel-city-health-data/"
   comment             = "Fully configured S3 external stage"
 }

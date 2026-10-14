@@ -42,7 +42,7 @@ resource "aws_iam_role_policy" "snowflake_role_policy" {
           "s3:GetObject",
           "s3:GetObjectVersion",
         ],
-        "Resource" : "arn:aws:s3:::ach-data-project/*"
+        "Resource" : "arn:aws:s3:::angel-city-health-data/*"
       },
       {
         "Effect" : "Allow",
@@ -50,7 +50,7 @@ resource "aws_iam_role_policy" "snowflake_role_policy" {
           "s3:ListBucket",
           "s3:GetBucketLocation"
         ],
-        "Resource" : "arn:aws:s3:::ach-data-project",
+        "Resource" : "arn:aws:s3:::angel-city-health-data",
         "Condition" : {
           "StringLike" : {
             "s3:prefix" : ["*"]
