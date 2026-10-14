@@ -15,10 +15,11 @@ provider "aws" {
 }
 
 provider "snowflake" {
-  organization_name = local.snowflake_tags.organization
-  account_name      = local.snowflake_tags.account
-  user              = "TERRAFORM_SVC"
-  role              = "SYSADMIN"
+  organization_name        = local.snowflake_tags.organization
+  account_name             = local.snowflake_tags.account
+  user                     = "TERRAFORM_SVC"
+  role                     = "SYSADMIN"
+  preview_features_enabled = ["snowflake_table_resource"]
   # password          = var.snowflake_password
   # authenticator     = "SNOWFLAKE_JWT"
   # private_key       = var.snowflake_private_key
